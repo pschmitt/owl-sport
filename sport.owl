@@ -48,6 +48,12 @@
     
 
 
+    <!-- http://owl.lxl.io/sport#aPourDate -->
+
+    <owl:ObjectProperty rdf:about="http://owl.lxl.io/sport#aPourDate"/>
+    
+
+
     <!-- http://owl.lxl.io/sport#aPourEquipe -->
 
     <owl:ObjectProperty rdf:about="http://owl.lxl.io/sport#aPourEquipe">
@@ -103,6 +109,15 @@
     
 
 
+    <!-- http://owl.lxl.io/sport#aPourParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://owl.lxl.io/sport#aPourParticipant">
+        <rdfs:domain rdf:resource="http://owl.lxl.io/sport#Evenement"/>
+        <rdfs:range rdf:resource="http://owl.lxl.io/sport#Personne"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://owl.lxl.io/sport#aPourTypeDeSportPratique -->
 
     <owl:ObjectProperty rdf:about="http://owl.lxl.io/sport#aPourTypeDeSportPratique">
@@ -147,26 +162,6 @@
         <rdfs:range rdf:resource="http://owl.lxl.io/sport#Sport"/>
         <rdfs:domain rdf:resource="http://owl.lxl.io/sport#Sportif"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://owl.lxl.io/sport#aPourDate -->
-
-    <owl:DatatypeProperty rdf:about="http://owl.lxl.io/sport#aPourDate">
-        <rdfs:domain rdf:resource="http://owl.lxl.io/sport#Evenement"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
-    </owl:DatatypeProperty>
     
 
 
@@ -629,6 +624,24 @@
     <!-- http://owl.lxl.io/sport#Partie -->
 
     <owl:Class rdf:about="http://owl.lxl.io/sport#Partie">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://owl.lxl.io/sport#aPourDate"/>
+                        <owl:someValuesFrom rdf:resource="http://owl.lxl.io/sport#Date"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://owl.lxl.io/sport#aPourParticipant"/>
+                        <owl:someValuesFrom rdf:resource="http://owl.lxl.io/sport#Joueur"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://owl.lxl.io/sport#aPourTypeDeSportPratique"/>
+                        <owl:someValuesFrom rdf:resource="http://owl.lxl.io/sport#Sport"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://owl.lxl.io/sport#Evenement"/>
     </owl:Class>
     
