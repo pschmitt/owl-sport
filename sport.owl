@@ -103,6 +103,16 @@
     
 
 
+    <!-- http://owl.lxl.io/sport#estComposeeDe -->
+
+    <owl:ObjectProperty rdf:about="http://owl.lxl.io/sport#estComposeeDe">
+        <rdfs:domain rdf:resource="http://owl.lxl.io/sport#Equipe"/>
+        <rdfs:range rdf:resource="http://owl.lxl.io/sport#Joueur"/>
+        <owl:inverseOf rdf:resource="http://owl.lxl.io/sport#faitPartiDe"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://owl.lxl.io/sport#faitPartiDe -->
 
     <owl:ObjectProperty rdf:about="http://owl.lxl.io/sport#faitPartiDe">
@@ -227,6 +237,15 @@
     <!-- http://owl.lxl.io/sport#Billard -->
 
     <owl:Class rdf:about="http://owl.lxl.io/sport#Billard">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://owl.lxl.io/sport#SportDePrecision"/>
+                    <rdf:Description rdf:about="http://owl.lxl.io/sport#SportEnSalle"/>
+                    <rdf:Description rdf:about="http://owl.lxl.io/sport#SportIndividuel"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://owl.lxl.io/sport#Sport"/>
     </owl:Class>
     
@@ -349,7 +368,15 @@
 
     <!-- http://owl.lxl.io/sport#Equipe -->
 
-    <owl:Class rdf:about="http://owl.lxl.io/sport#Equipe"/>
+    <owl:Class rdf:about="http://owl.lxl.io/sport#Equipe">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://owl.lxl.io/sport#estComposeeDe"/>
+                <owl:onClass rdf:resource="http://owl.lxl.io/sport#Joueur"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
     
 
 
@@ -400,6 +427,14 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://owl.lxl.io/sport#Sport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://owl.lxl.io/sport#GestesPrecis -->
+
+    <owl:Class rdf:about="http://owl.lxl.io/sport#GestesPrecis">
+        <rdfs:subClassOf rdf:resource="http://owl.lxl.io/sport#Competition"/>
     </owl:Class>
     
 
@@ -579,8 +614,8 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://owl.lxl.io/sport#SportCollectif"/>
                     <rdf:Description rdf:about="http://owl.lxl.io/sport#SportDeCible"/>
+                    <rdf:Description rdf:about="http://owl.lxl.io/sport#SportMixte"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://owl.lxl.io/sport#aPourLieu"/>
                         <owl:someValuesFrom rdf:resource="http://owl.lxl.io/sport#Exterieur"/>
@@ -831,6 +866,12 @@ Et si tous les &quot;Types de sport&quot; (SportAnimalier, SportDeBalle..) en fi
     <!-- http://owl.lxl.io/sport#SportDePrecision -->
 
     <owl:Class rdf:about="http://owl.lxl.io/sport#SportDePrecision">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://owl.lxl.io/sport#aPourFormeCompetitive"/>
+                <owl:someValuesFrom rdf:resource="http://owl.lxl.io/sport#GestesPrecis"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://owl.lxl.io/sport#SportCategorie"/>
     </owl:Class>
     
@@ -976,6 +1017,14 @@ Et si tous les &quot;Types de sport&quot; (SportAnimalier, SportDeBalle..) en fi
             <rdf:Description rdf:about="http://owl.lxl.io/sport#Exterieur"/>
             <rdf:Description rdf:about="http://owl.lxl.io/sport#Montagne"/>
             <rdf:Description rdf:about="http://owl.lxl.io/sport#Salle"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Affrontement"/>
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#AtteindreCible"/>
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#GestesPrecis"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
