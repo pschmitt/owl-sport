@@ -1078,6 +1078,65 @@ Et si tous les &quot;Types de sport&quot; (SportAnimalier, SportDeBalle..) en fi
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://owl.lxl.io/sport#08Juillet1991 -->
+
+    <owl:NamedIndividual rdf:about="http://owl.lxl.io/sport#08Juillet1991">
+        <rdf:type rdf:resource="http://owl.lxl.io/sport#Date"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://owl.lxl.io/sport#08Mars2014 -->
+
+    <owl:NamedIndividual rdf:about="http://owl.lxl.io/sport#08Mars2014">
+        <rdf:type rdf:resource="http://owl.lxl.io/sport#Date"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://owl.lxl.io/sport#Marcel -->
+
+    <owl:NamedIndividual rdf:about="http://owl.lxl.io/sport#Marcel">
+        <rdf:type rdf:resource="http://owl.lxl.io/sport#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://owl.lxl.io/sport#PhilipMorris -->
+
+    <owl:NamedIndividual rdf:about="http://owl.lxl.io/sport#PhilipMorris">
+        <rdf:type rdf:resource="http://owl.lxl.io/sport#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://owl.lxl.io/sport#PiscineDeCompiegne -->
+
+    <owl:NamedIndividual rdf:about="http://owl.lxl.io/sport#PiscineDeCompiegne">
+        <rdf:type rdf:resource="http://owl.lxl.io/sport#Piscine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://owl.lxl.io/sport#TeamGeist -->
+
+    <owl:NamedIndividual rdf:about="http://owl.lxl.io/sport#TeamGeist">
+        <rdf:type rdf:resource="http://owl.lxl.io/sport#Balle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // General axioms
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -1086,6 +1145,43 @@ Et si tous les &quot;Types de sport&quot; (SportAnimalier, SportDeBalle..) en fi
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Animal"/>
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Balle"/>
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Boule"/>
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Crosse"/>
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Raquette"/>
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Vehicule"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Exterieur"/>
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Montagne"/>
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Salle"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Animal"/>
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Balle"/>
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Raquette"/>
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Vehicule"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Affrontement"/>
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#AtteindreCible"/>
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#GestesPrecis"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://owl.lxl.io/sport#Eau"/>
             <rdf:Description rdf:about="http://owl.lxl.io/sport#Exterieur"/>
             <rdf:Description rdf:about="http://owl.lxl.io/sport#Montagne"/>
             <rdf:Description rdf:about="http://owl.lxl.io/sport#Salle"/>
@@ -1108,47 +1204,10 @@ Et si tous les &quot;Types de sport&quot; (SportAnimalier, SportDeBalle..) en fi
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Affrontement"/>
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#AtteindreCible"/>
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#GestesPrecis"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Animal"/>
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Balle"/>
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Boule"/>
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Crosse"/>
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Raquette"/>
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Vehicule"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Eau"/>
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Exterieur"/>
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Montagne"/>
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Salle"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://owl.lxl.io/sport#Animal"/>
             <rdf:Description rdf:about="http://owl.lxl.io/sport#Ballon"/>
             <rdf:Description rdf:about="http://owl.lxl.io/sport#Boule"/>
             <rdf:Description rdf:about="http://owl.lxl.io/sport#Crosse"/>
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Raquette"/>
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Vehicule"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Animal"/>
-            <rdf:Description rdf:about="http://owl.lxl.io/sport#Balle"/>
             <rdf:Description rdf:about="http://owl.lxl.io/sport#Raquette"/>
             <rdf:Description rdf:about="http://owl.lxl.io/sport#Vehicule"/>
         </owl:members>
