@@ -33,6 +33,7 @@
     <!-- http://owl.lxl.io/sport#aPourAminal -->
 
     <owl:ObjectProperty rdf:about="http://owl.lxl.io/sport#aPourAminal">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:range rdf:resource="http://owl.lxl.io/sport#Animal"/>
         <rdfs:domain rdf:resource="http://owl.lxl.io/sport#Partie"/>
     </owl:ObjectProperty>
@@ -42,6 +43,7 @@
     <!-- http://owl.lxl.io/sport#aPourJoueur -->
 
     <owl:ObjectProperty rdf:about="http://owl.lxl.io/sport#aPourJoueur">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:range rdf:resource="http://owl.lxl.io/sport#Joueur"/>
         <rdfs:domain rdf:resource="http://owl.lxl.io/sport#Partie"/>
     </owl:ObjectProperty>
@@ -51,6 +53,7 @@
     <!-- http://owl.lxl.io/sport#aPourLieu -->
 
     <owl:ObjectProperty rdf:about="http://owl.lxl.io/sport#aPourLieu">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:range rdf:resource="http://owl.lxl.io/sport#Endroit"/>
         <rdfs:domain rdf:resource="http://owl.lxl.io/sport#Sport"/>
     </owl:ObjectProperty>
@@ -60,6 +63,7 @@
     <!-- http://owl.lxl.io/sport#aPourMateriel -->
 
     <owl:ObjectProperty rdf:about="http://owl.lxl.io/sport#aPourMateriel">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:range rdf:resource="http://owl.lxl.io/sport#Materiel"/>
         <rdfs:domain rdf:resource="http://owl.lxl.io/sport#Sport"/>
     </owl:ObjectProperty>
@@ -69,8 +73,20 @@
     <!-- http://owl.lxl.io/sport#aPourVainqueur -->
 
     <owl:ObjectProperty rdf:about="http://owl.lxl.io/sport#aPourVainqueur">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:range rdf:resource="http://owl.lxl.io/sport#Joueur"/>
         <rdfs:domain rdf:resource="http://owl.lxl.io/sport#Partie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://owl.lxl.io/sport#aPourVehicule -->
+
+    <owl:ObjectProperty rdf:about="http://owl.lxl.io/sport#aPourVehicule">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://owl.lxl.io/sport#SportMecanique"/>
+        <rdfs:range rdf:resource="http://owl.lxl.io/sport#Vehicule"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -78,6 +94,7 @@
     <!-- http://owl.lxl.io/sport#faitPartiDe -->
 
     <owl:ObjectProperty rdf:about="http://owl.lxl.io/sport#faitPartiDe">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:range rdf:resource="http://owl.lxl.io/sport#Equipe"/>
         <rdfs:domain rdf:resource="http://owl.lxl.io/sport#Joueur"/>
     </owl:ObjectProperty>
@@ -87,6 +104,7 @@
     <!-- http://owl.lxl.io/sport#pratique -->
 
     <owl:ObjectProperty rdf:about="http://owl.lxl.io/sport#pratique">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:range rdf:resource="http://owl.lxl.io/sport#Sport"/>
         <rdfs:domain rdf:resource="http://owl.lxl.io/sport#Sportif"/>
     </owl:ObjectProperty>
@@ -639,7 +657,8 @@
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://owl.lxl.io/sport#aPourAminal"/>
-                <owl:someValuesFrom rdf:resource="http://owl.lxl.io/sport#Animal"/>
+                <owl:onClass rdf:resource="http://owl.lxl.io/sport#Animal"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://owl.lxl.io/sport#SportCategorie"/>
@@ -796,10 +815,7 @@ Et si tous les &quot;Types de sport&quot; (SportAnimalier, SportDeBalle..) en fi
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://owl.lxl.io/sport#Sport"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://owl.lxl.io/sport#aPourMateriel"/>
-                        <owl:someValuesFrom rdf:resource="http://owl.lxl.io/sport#Cheval"/>
-                    </owl:Restriction>
+                    <rdf:Description rdf:about="http://owl.lxl.io/sport#SportAnimalier"/>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -819,6 +835,13 @@ Et si tous les &quot;Types de sport&quot; (SportAnimalier, SportDeBalle..) en fi
     <!-- http://owl.lxl.io/sport#SportMecanique -->
 
     <owl:Class rdf:about="http://owl.lxl.io/sport#SportMecanique">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://owl.lxl.io/sport#aPourVehicule"/>
+                <owl:onClass rdf:resource="http://owl.lxl.io/sport#Vehicule"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://owl.lxl.io/sport#SportCategorie"/>
     </owl:Class>
     
